@@ -1,0 +1,34 @@
+package com.simoncomputing.app.helloworld.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Results;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectKey;
+
+import com.simoncomputing.app.helloworld.domain.Address;
+import com.simoncomputing.app.helloworld.domain.Phone;
+import com.simoncomputing.app.helloworld.domain.User;
+
+public interface UserDAO {
+    
+    @Insert("INSERT INTO user( first_name, last_name, role, title, active ) " 
+            + " VALUES( #{firstName}, #{lastName}, #{role}, #{title}, ${active ? '1' : '0'} )")
+    @SelectKey(statement="call identity()", keyProperty="id", before=false, resultType=Integer.class)
+    void insertUser(User user);
+    
+    @Select("SELECT * FROM user WHERE id = #{id}")
+    @Results(id = "userResults", value= {
+            @Result(property="address", column="user_id",
+                    javaType=Address.class,
+                    one=@One(select="com.simoncomputing.app.helloworld.dao.UserAddressDAO.getAddressByUserId")),
+            @Result(property="phones", column="user_id",
+                    javaType=Phone.class,
+                    many=@Many(select="com.simoncomputing.app.helloworld.dao.UserPhoneDAO.getPhonesByUserId"))
+    })
+    User getUserById(@Param("id") Integer id);
+    List<User> getAllUsers();
+    void updateUser(User user);
+    void deleteUser(Integer id);
+}

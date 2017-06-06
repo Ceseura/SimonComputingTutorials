@@ -1,0 +1,76 @@
+package com.simoncomputing.app.helloworld.domain;
+
+import java.util.Arrays;
+
+public class User {
+    private Integer id;
+    private String firstName;
+    private String lastName;
+    private String role;
+    private String title;
+    private Boolean active;
+    
+    @Override
+    public String toString() {
+        return String.format(
+                "User [id=%d, firstName=%s, lastName=%s, role=%s, title=%s, address=[%s], phones=[%s], active=%b",
+                id,
+                firstName,
+                lastName,
+                role,
+                title,
+                active);
+    }
+    
+    //Setters, getters
+    public void setid(Integer newid) {
+        id = newid;
+    }
+    
+    public Integer getid() {
+        return id;
+    }
+    
+    public void setFirstName(String newFN) {
+        firstName = newFN;
+    }
+    
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setLastName(String newLN) {
+        lastName = newLN;
+    }
+    
+    public String getLastName() {
+        return lastName;
+    }
+    
+    public void setRole(String newRole) {
+        role = newRole;
+    }
+    
+    public String getRole() {
+        return role;
+    }
+    
+    public void setTitle(String newTitle) {
+        title = newTitle;
+    }
+    
+    public String getTitle() {
+        return title;
+    }
+
+    public void setActive(Boolean newActive) {
+        active = newActive;
+    }
+    
+    public Boolean getActive() {
+        return active;
+    }
+    
+}
+
+

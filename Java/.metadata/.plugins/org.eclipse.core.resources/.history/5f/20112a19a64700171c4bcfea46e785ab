@@ -1,0 +1,14 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS user_address;
+DROP TABLE IF EXISTS user_phone;
+
+CREATE TABLE user {
+	id int(10) unsigned NOT NULL auto_increment,
+	first_name varchar(45) NOT NULL,
+	last_name varchar(45) default NULL,
+	role varchar(45) default NULL,
+	title varchar(45) default NULL,
+	active char(1) default 1,
+
+	CONSTRAINT PK_User PRIMARY KEY (id)
+}

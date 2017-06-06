@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserBOTest" project="springboot" tests="18" started="18" failures="0" errors="3" ignored="0">
+  <testsuite name="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.736">
+    <testcase name="whenEditingUser_lastNameCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.224"/>
+    <testcase name="whenEditingUser_firstNameCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.046"/>
+    <testcase name="whenEditingUserPhones_retrievedUserHasOnlyEditedData" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.041">
+      <error>org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.executor.ExecutorException: Error selecting key or setting result to parameter object. Cause: org.apache.ibatis.reflection.ReflectionException: Could not set property 'id' of 'class com.simoncomputing.app.helloworld.domain.Phone' with value '1' Cause: org.apache.ibatis.reflection.ReflectionException: There is no setter for property named 'id' in 'class com.simoncomputing.app.helloworld.domain.Phone'
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy68.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:57)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy78.insertPhone(Unknown Source)
+	at com.simoncomputing.app.helloworld.bo.UserBO.insertPhone(UserBO.java:121)
+	at com.simoncomputing.app.helloworld.bo.UserBO.insertPhonesWrapper(UserBO.java:112)
+	at com.simoncomputing.app.helloworld.bo.UserBO.insertUser(UserBO.java:36)
+	at com.simoncomputing.app.helloworld.bo.UserBOTest.whenEditingUserPhones_retrievedUserHasOnlyEditedData(UserBOTest.java:567)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.apache.ibatis.executor.ExecutorException: Error selecting key or setting result to parameter object. Cause: org.apache.ibatis.reflection.ReflectionException: Could not set property 'id' of 'class com.simoncomputing.app.helloworld.domain.Phone' with value '1' Cause: org.apache.ibatis.reflection.ReflectionException: There is no setter for property named 'id' in 'class com.simoncomputing.app.helloworld.domain.Phone'
+	at org.apache.ibatis.executor.keygen.SelectKeyGenerator.processGeneratedKeys(SelectKeyGenerator.java:92)
+	at org.apache.ibatis.executor.keygen.SelectKeyGenerator.processAfter(SelectKeyGenerator.java:54)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:50)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 38 more
+Caused by: org.apache.ibatis.reflection.ReflectionException: Could not set property 'id' of 'class com.simoncomputing.app.helloworld.domain.Phone' with value '1' Cause: org.apache.ibatis.reflection.ReflectionException: There is no setter for property named 'id' in 'class com.simoncomputing.app.helloworld.domain.Phone'
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.setBeanProperty(BeanWrapper.java:185)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.set(BeanWrapper.java:59)
+	at org.apache.ibatis.reflection.MetaObject.setValue(MetaObject.java:140)
+	at org.apache.ibatis.reflection.MetaObject.setValue(MetaObject.java:138)
+	at org.apache.ibatis.executor.keygen.SelectKeyGenerator.setValue(SelectKeyGenerator.java:117)
+	at org.apache.ibatis.executor.keygen.SelectKeyGenerator.processGeneratedKeys(SelectKeyGenerator.java:81)
+	... 51 more
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no setter for property named 'id' in 'class com.simoncomputing.app.helloworld.domain.Phone'
+	at org.apache.ibatis.reflection.Reflector.getSetInvoker(Reflector.java:413)
+	at org.apache.ibatis.reflection.MetaClass.getSetInvoker(MetaClass.java:168)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.setBeanProperty(BeanWrapper.java:177)
+	... 56 more
+
+</error>
+    </testcase>
+    <testcase name="whenEditingUserAddress_stateCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.013"/>
+    <testcase name="whenEditingUserAddress_cityCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.016"/>
+    <testcase name="whenEditingUser_andRemovingAddress_addressIsRemoved" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.013"/>
+    <testcase name="whenEditingUserAddress_streetCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.013"/>
+    <testcase name="whenInsertingUserWithPhone_userIsRetrievableWithPhone" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.01">
+      <error>org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.executor.ExecutorException: Error selecting key or setting result to parameter object. Cause: org.apache.ibatis.reflection.ReflectionException: Could not set property 'id' of 'class com.simoncomputing.app.helloworld.domain.Phone' with value '2' Cause: org.apache.ibatis.reflection.ReflectionException: There is no setter for property named 'id' in 'class com.simoncomputing.app.helloworld.domain.Phone'
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy68.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:57)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy78.insertPhone(Unknown Source)
+	at com.simoncomputing.app.helloworld.bo.UserBO.insertPhone(UserBO.java:121)
+	at com.simoncomputing.app.helloworld.bo.UserBO.insertPhonesWrapper(UserBO.java:112)
+	at com.simoncomputing.app.helloworld.bo.UserBO.insertUser(UserBO.java:36)
+	at com.simoncomputing.app.helloworld.bo.UserBOTest.whenInsertingUserWithPhone_userIsRetrievableWithPhone(UserBOTest.java:492)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.apache.ibatis.executor.ExecutorException: Error selecting key or setting result to parameter object. Cause: org.apache.ibatis.reflection.ReflectionException: Could not set property 'id' of 'class com.simoncomputing.app.helloworld.domain.Phone' with value '2' Cause: org.apache.ibatis.reflection.ReflectionException: There is no setter for property named 'id' in 'class com.simoncomputing.app.helloworld.domain.Phone'
+	at org.apache.ibatis.executor.keygen.SelectKeyGenerator.processGeneratedKeys(SelectKeyGenerator.java:92)
+	at org.apache.ibatis.executor.keygen.SelectKeyGenerator.processAfter(SelectKeyGenerator.java:54)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:50)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.GeneratedMethodAccessor31.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 38 more
+Caused by: org.apache.ibatis.reflection.ReflectionException: Could not set property 'id' of 'class com.simoncomputing.app.helloworld.domain.Phone' with value '2' Cause: org.apache.ibatis.reflection.ReflectionException: There is no setter for property named 'id' in 'class com.simoncomputing.app.helloworld.domain.Phone'
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.setBeanProperty(BeanWrapper.java:185)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.set(BeanWrapper.java:59)
+	at org.apache.ibatis.reflection.MetaObject.setValue(MetaObject.java:140)
+	at org.apache.ibatis.reflection.MetaObject.setValue(MetaObject.java:138)
+	at org.apache.ibatis.executor.keygen.SelectKeyGenerator.setValue(SelectKeyGenerator.java:117)
+	at org.apache.ibatis.executor.keygen.SelectKeyGenerator.processGeneratedKeys(SelectKeyGenerator.java:81)
+	... 50 more
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no setter for property named 'id' in 'class com.simoncomputing.app.helloworld.domain.Phone'
+	at org.apache.ibatis.reflection.Reflector.getSetInvoker(Reflector.java:413)
+	at org.apache.ibatis.reflection.MetaClass.getSetInvoker(MetaClass.java:168)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.setBeanProperty(BeanWrapper.java:177)
+	... 55 more
+
+</error>
+    </testcase>
+    <testcase name="whenEditingUserAddress_zipCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.049"/>
+    <testcase name="whenEditingUser_activeCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.047"/>
+    <testcase name="whenInsertingUserWithAddress_userIsRetrievableWithAddress" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.018"/>
+    <testcase name="whenEditingUser_roleCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.03"/>
+    <testcase name="whenInsertingUser_userIsRetrievable" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.014"/>
+    <testcase name="afterInsertingManyUsers_allUsersRetrievableInList" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.077"/>
+    <testcase name="whenDeletingUserWithPhoneNumbers_userIsNotRetrievableAndNeitherArePhoneNumbers" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.026">
+      <error>org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.executor.ExecutorException: Error selecting key or setting result to parameter object. Cause: org.apache.ibatis.reflection.ReflectionException: Could not set property 'id' of 'class com.simoncomputing.app.helloworld.domain.Phone' with value '3' Cause: org.apache.ibatis.reflection.ReflectionException: There is no setter for property named 'id' in 'class com.simoncomputing.app.helloworld.domain.Phone'
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy68.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:57)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy78.insertPhone(Unknown Source)
+	at com.simoncomputing.app.helloworld.bo.UserBO.insertPhone(UserBO.java:121)
+	at com.simoncomputing.app.helloworld.bo.UserBO.insertPhonesWrapper(UserBO.java:112)
+	at com.simoncomputing.app.helloworld.bo.UserBO.insertUser(UserBO.java:36)
+	at com.simoncomputing.app.helloworld.bo.UserBOTest.whenDeletingUserWithPhoneNumbers_userIsNotRetrievableAndNeitherArePhoneNumbers(UserBOTest.java:521)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.apache.ibatis.executor.ExecutorException: Error selecting key or setting result to parameter object. Cause: org.apache.ibatis.reflection.ReflectionException: Could not set property 'id' of 'class com.simoncomputing.app.helloworld.domain.Phone' with value '3' Cause: org.apache.ibatis.reflection.ReflectionException: There is no setter for property named 'id' in 'class com.simoncomputing.app.helloworld.domain.Phone'
+	at org.apache.ibatis.executor.keygen.SelectKeyGenerator.processGeneratedKeys(SelectKeyGenerator.java:92)
+	at org.apache.ibatis.executor.keygen.SelectKeyGenerator.processAfter(SelectKeyGenerator.java:54)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:50)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.GeneratedMethodAccessor31.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 38 more
+Caused by: org.apache.ibatis.reflection.ReflectionException: Could not set property 'id' of 'class com.simoncomputing.app.helloworld.domain.Phone' with value '3' Cause: org.apache.ibatis.reflection.ReflectionException: There is no setter for property named 'id' in 'class com.simoncomputing.app.helloworld.domain.Phone'
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.setBeanProperty(BeanWrapper.java:185)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.set(BeanWrapper.java:59)
+	at org.apache.ibatis.reflection.MetaObject.setValue(MetaObject.java:140)
+	at org.apache.ibatis.reflection.MetaObject.setValue(MetaObject.java:138)
+	at org.apache.ibatis.executor.keygen.SelectKeyGenerator.setValue(SelectKeyGenerator.java:117)
+	at org.apache.ibatis.executor.keygen.SelectKeyGenerator.processGeneratedKeys(SelectKeyGenerator.java:81)
+	... 50 more
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no setter for property named 'id' in 'class com.simoncomputing.app.helloworld.domain.Phone'
+	at org.apache.ibatis.reflection.Reflector.getSetInvoker(Reflector.java:413)
+	at org.apache.ibatis.reflection.MetaClass.getSetInvoker(MetaClass.java:168)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.setBeanProperty(BeanWrapper.java:177)
+	... 55 more
+
+</error>
+    </testcase>
+    <testcase name="whenDeletingUserWithAddress_userIsNotRetrievableAndNeitherIsAddress" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.043"/>
+    <testcase name="whenDeletingUser_userIsNotRetrievable" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.012"/>
+    <testcase name="whenEditingUser_titleCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.026"/>
+  </testsuite>
+</testrun>

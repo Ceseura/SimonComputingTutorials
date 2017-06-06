@@ -1,0 +1,40 @@
+package com.simoncomputing.app.helloworld;
+
+import javax.sql.DataSource;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
+
+@SpringBootApplication
+@MapperScan("com.simoncomputing.app.helloworld.dao")       // <-- add this annotation
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+
+    @Bean                                                 // <-- add this `dataSource` bean
+    public DataSource dataSource() {
+      return new EmbeddedDatabaseBuilder()
+                      .setType(EmbeddedDatabaseType.H2)   // <-- `h2` database
+                      .addScript("schema.sql")            // <-- initialization script
+                      .build();
+    }
+
+    @Bean                                                 // <-- add this `sqlSessionFactory` bean
+    public SqlSessionFactory sqlSessionFactory() throws Exception {
+      SqlSessionFactoryBean sessionFactoryBean = new SqlSessionFactoryBean();
+      sessionFactoryBean.setDataSource(dataSource());
+      SqlSessionFactory sessionFactory = sessionFactoryBean.getObject();
+      sessionFactory.getConfiguration().setMapUnderscoreToCamelCase(true); // <-- note this configuration
+      return sessionFactory;
+    }
+}
+
+

@@ -1,0 +1,21 @@
+package com.simoncomputing.app.helloworld.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.SelectKey;
+
+import com.simoncomputing.app.helloworld.domain.Phone;
+
+public interface UserPhoneDAO {
+    
+    @Insert(" INSERT INTO user_address( user_id, type, phone_no ) " 
+            + " VALUES( #{uid}, #{phone.type}, #{phone.phone_no} ) ")
+    @SelectKey(statement="call identity()", keyProperty="phone.id", before=false, resultType=Integer.class)
+    void insertPhone(@Param("uid") Integer userId, @Param("phone")Phone phone);
+    
+    @Select(" SELECT * WHERE user_id = #{uid}")
+    List<Phone> getPhonesByUserId(@param("uid") Integer userId);
+    void deletePhoneByUserId(Integer userId);
+}

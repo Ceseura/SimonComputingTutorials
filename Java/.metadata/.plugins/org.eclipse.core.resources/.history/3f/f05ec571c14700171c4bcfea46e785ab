@@ -1,0 +1,26 @@
+package com.simoncomputing.app.helloworld.dao;
+
+import com.simoncomputing.app.helloworld.domain.Address;
+
+public interface UserAddressDAO {
+    
+    @Insert(" INSERT INTO user_address( street, city, state, zip ) " 
+            + " VALUES( #{street}, #{city}, #{state}, #{zip} ) ")
+    @SelectKey(statement="call identity()", keyProperty="id", before=false, resutType=Integer.class)
+    void insertAddress(Integer userId, Address address);
+    
+    @Select("SELECT * FROM user_address WHERE id = #{id}")
+    @Results(id="userResults")
+    Address getAddressByUserId(Integer userId);
+    
+    @Update(" UPDATE user_address SET "
+            + " street = #{street}, "
+            + " city = #{city}, "
+            + " state = #{state}, "
+            + " zip = #{zip}"
+            + " WHERE id = #{id} ")
+    void updateAddress(Integer userId, Address address);
+    
+    @Delete("DELETE FROM user_address WHERE id = #{id}")
+    void deleteAddress(Integer userId);
+}

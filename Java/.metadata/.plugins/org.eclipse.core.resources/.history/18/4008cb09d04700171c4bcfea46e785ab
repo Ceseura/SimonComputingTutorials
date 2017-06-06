@@ -1,0 +1,5 @@
+package com.simoncomputing.app.helloworld.bo.utils;
+
+public class UserBuilder {
+
+}

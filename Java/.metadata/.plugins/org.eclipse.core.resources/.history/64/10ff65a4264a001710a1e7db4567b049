@@ -1,0 +1,13 @@
+package com.simoncomputing.app.helloworld.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
+import com.simoncomputing.app.helloworld.domain.Phone;
+
+public interface UserPhoneDAO {
+    void insertPhone(@Param("uid") Integer userId, @Param("phone")Phone phone);
+    List<Phone> getPhonesByUserId(Integer userId);
+    void deletePhoneByUserId(Integer userId);
+}

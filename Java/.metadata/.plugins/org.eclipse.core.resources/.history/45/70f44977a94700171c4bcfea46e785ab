@@ -1,0 +1,7 @@
+package com.simoncomputing.app.helloworld.dao;
+
+public interface UserPhoneDAO {
+    void insertPhone(Integer userId, Phone phone);
+    List<Phone> getPhonesByUserId(Integer userId);
+    void deletePhoneByUserId(Integer userId);
+}

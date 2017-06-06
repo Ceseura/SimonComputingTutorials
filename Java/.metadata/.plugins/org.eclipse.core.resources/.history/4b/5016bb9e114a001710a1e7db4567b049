@@ -1,0 +1,7 @@
+package com.simoncomputing.app.helloworld.bo.utils;
+
+import com.simoncomputing.app.helloworld.domain.Address;
+
+public class AddressUtils {
+    private Address address = new Address();
+}

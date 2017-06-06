@@ -1,0 +1,8 @@
+package com.simoncomputing.app.helloworld.dao;
+
+public interface UserAddressDAO {
+    void insertAddress(Integer userId, Address address);
+    Address getAddressByUserId(Integer userId);
+    void updateAddress(Integer userId, Address address);
+    void deleteAddress(Integer userId);
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserBOTest" project="springboot" tests="22" started="22" failures="1" errors="0" ignored="0">
+  <testsuite name="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.783">
+    <testcase name="whenEditingUser_lastNameCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.262"/>
+    <testcase name="whenEditingUser_firstNameCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.021"/>
+    <testcase name="whenEditingUserPhones_retrievedUserHasOnlyEditedData" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.028"/>
+    <testcase name="whenEditingUserAddress_stateCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.012"/>
+    <testcase name="whenDeletingUser_andUserDoesNotExist" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.029">
+      <failure>
+        <expected>null</expected>
+        <actual>User [id=1, firstName=originalFN, lastName=expectedLastName, role=null, title=null, address=[Address [street=null, city=null, state=null, zip=null]], phones=[null], active=true</actual>org.junit.ComparisonFailure: expected:&lt;null&gt; but was:&lt;User [id=1, firstName=originalFN, lastName=expectedLastName, role=null, title=null, address=[Address [street=null, city=null, state=null, zip=null]], phones=[null], active=true&gt;
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at com.simoncomputing.app.helloworld.bo.UserBOTest.whenDeletingUser_andUserDoesNotExist(UserBOTest.java:726)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+
+</failure>
+    </testcase>
+    <testcase name="whenEditingUserAddress_cityCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.012"/>
+    <testcase name="whenEditingUser_andRemovingAddress_addressIsRemoved" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.021"/>
+    <testcase name="whenAddingPhones_retrievedUserIncludesOldPlusNewPhones" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.062"/>
+    <testcase name="whenEditingUserAddress_streetCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.022"/>
+    <testcase name="whenInsertingUserWithPhone_userIsRetrievableWithPhone" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.013"/>
+    <testcase name="whenEditingUserAddress_zipCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.015"/>
+    <testcase name="whenUpdatingUser_andUserDoesNotExist" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.017"/>
+    <testcase name="whenEditingUser_activeCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.018"/>
+    <testcase name="whenInsertingUserWithAddress_userIsRetrievableWithAddress" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.021"/>
+    <testcase name="whenEditingUser_roleCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.02"/>
+    <testcase name="whenInsertingUser_userIsRetrievable" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.012"/>
+    <testcase name="afterInsertingManyUsers_allUsersRetrievableInList" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.086"/>
+    <testcase name="whenDeletingUserWithPhoneNumbers_userIsNotRetrievableAndNeitherArePhoneNumbers" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.047"/>
+    <testcase name="whenDeletingUserWithAddress_userIsNotRetrievableAndNeitherIsAddress" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.012"/>
+    <testcase name="whenDeletingUser_userIsNotRetrievable" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.014"/>
+    <testcase name="whenEditingUser_titleCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.013"/>
+    <testcase name="whenRemovingPhones_retrievedUserHasOnlyRemainingPhones" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.025"/>
+  </testsuite>
+</testrun>

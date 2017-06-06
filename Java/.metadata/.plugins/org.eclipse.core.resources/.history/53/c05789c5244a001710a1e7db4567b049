@@ -1,0 +1,121 @@
+package com.simoncomputing.app.helloworld.bo;
+
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+import com.simoncomputing.app.helloworld.dao.UserAddressDAO;
+import com.simoncomputing.app.helloworld.dao.UserDAO;
+import com.simoncomputing.app.helloworld.dao.UserPhoneDAO;
+import com.simoncomputing.app.helloworld.domain.Address;
+import com.simoncomputing.app.helloworld.domain.Phone;
+import com.simoncomputing.app.helloworld.domain.User;
+
+@Component
+public class UserBO {
+
+    private final UserDAO userDAO;
+    private final UserAddressDAO userAddressDAO;
+    private final UserPhoneDAO userPhoneDAO;
+    
+    public UserBO(UserDAO userDAO, UserAddressDAO userAddressDAO, UserPhoneDAO userPhoneDAO) {
+        this.userDAO = userDAO;
+        this.userAddressDAO = userAddressDAO;
+        this.userPhoneDAO = userPhoneDAO;
+    }
+    
+    public User insertUser(User user) {
+        //Insert the user
+        this.userDAO.insertUser(user);
+        //Also insert address in the address Database if it is not null
+        // This always evaluates to true because UserBuilder instantiates address with all null fields
+        if (user.getAddress() != null) {
+            this.insertAddress(user.getId(), user.getAddress());
+        }
+        //And also, insert phone in the phone database
+        this.insertPhones(user.getId(), user.getPhones());
+
+        return user;
+    }
+    
+    public User getUserById(Integer userId) {
+        User returnMe = this.userDAO.getUserById(userId);
+        //Also search address database, set user.address field if address found
+        Address userAddress = this.getAddressByUserId(userId);
+        if (userAddress != null) {
+            returnMe.setAddress(userAddress);
+        }
+        
+        //And also search the phones database and set user.phones
+        List<Phone> userPhones = this.getPhonesByUserId(userId);
+        returnMe.setPhones(userPhones.toArray(new Phone[userPhones.size()]));
+        return returnMe;
+    }
+    
+    public List<User> getAllUsers() {
+        return this.userDAO.getAllUsers();
+    }
+
+    public User updateUser(User user) {
+        this.userDAO.updateUser(user);
+        return user;
+    }
+
+    public void deleteUser(Integer userId) {
+        this.userDAO.deleteUser(userId);
+    }
+    
+    public User updateAddressWrapper(User user, Address address) {
+        //Update the address in the database
+        this.updateAddress(user.getId(), address);
+        //Update the user.address field
+        user.setAddress(address);
+        return user;
+    }
+    
+    public User deleteAddressWrapper(User user) {
+        //Delete the address from the database
+        this.deleteAddress(user.getId());
+        //Update the user.address field
+        user.setAddress(new Address());
+        return user;
+    }
+    
+    public Address insertAddress(Integer userId, Address address) {
+        this.userAddressDAO.insertAddress(userId, address);
+        return address;
+    }
+    
+    public Address getAddressByUserId(Integer userId) {
+        return this.userAddressDAO.getAddressByUserId(userId);
+    }
+    
+    public Address updateAddress(Integer userId, Address address) {
+        this.userAddressDAO.updateAddress(userId, address);
+        return address;
+    }
+    
+    public void deleteAddress(Integer userId) {
+        this.userAddressDAO.deleteAddress(userId);
+    }
+
+    public void insertPhones(Integer userId, Phone[] phones) {
+        for (int i = 0; i < phones.length; i++){
+            this.userPhoneDAO.insertPhone(userId, phones[i]);
+        }
+    }
+    
+    public List<Phone> getPhonesByUserId(Integer userId) {
+        return this.userPhoneDAO.getPhonesByUserId(userId);
+    }
+    
+    public void deletePhonesByUserId(Integer userId) {
+        this.userPhoneDAO.deletePhoneByUserId(userId);
+    }
+    
+    public User deletePhonesWrapper(User user) {
+        this.deletePhonesByUserId(user.getId());
+        user.setPhones(null);
+        return user;
+    }
+}

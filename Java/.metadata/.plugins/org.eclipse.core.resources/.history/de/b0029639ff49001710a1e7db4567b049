@@ -1,0 +1,43 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS user_address;
+DROP TABLE IF EXISTS user_phone;
+
+CREATE TABLE user (
+    id int(10) unsigned NOT NULL auto_increment,
+    first_name varchar(45) NOT NULL,
+    last_name varchar(45) default NULL,
+    role varchar(45) default NULL,
+    title varchar(45) default NULL,
+    active char(1) default 1,
+    
+
+    CONSTRAINT PK_User PRIMARY KEY (id)
+);
+
+CREATE TABLE user_address (
+    id int(10) unsigned NOT NULL auto_increment,
+    user_id int(10) unsigned NOT NULL,
+    street varchar(100) default NULL,
+    city varchar(45) default NULL,
+    state varchar(2) default NULL,
+    zip varchar(10) default NULL,
+     
+    CONSTRAINT PK_User_Address PRIMARY KEY (id),
+    CONSTRAINT FK_User_Address FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
+);
+
+CREATE TABLE user_phone (
+    id int(10) unsigned NOT NULL auto_increment,
+    user_id int(10) unsigned NOT NULL,
+    type varchar(10) NOT NULL default 'home',
+    phone_no varchar(15) NOT NULL,
+
+    CONSTRAINT PK_User_Phone PRIMARY KEY (id),
+    CONSTRAINT FK_User_Phone FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
+    CONSTRAINT AK_User_Phone_Type UNIQUE (user_id, type, phone_no)
+
+);
+
+
+
+

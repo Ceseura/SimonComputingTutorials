@@ -1,0 +1,5 @@
+package com.simoncomputing.app.helloworld.dao;
+
+public interface UserPhoneDAO {
+
+}

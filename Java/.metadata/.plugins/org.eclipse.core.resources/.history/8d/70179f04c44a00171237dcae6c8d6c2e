@@ -1,0 +1,669 @@
+package com.simoncomputing.app.helloworld.bo;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.simoncomputing.app.helloworld.Application;
+import com.simoncomputing.app.helloworld.bo.UserBO;
+import com.simoncomputing.app.helloworld.bo.utils.UserBuilder;
+import com.simoncomputing.app.helloworld.dao.UserDAO;
+import com.simoncomputing.app.helloworld.domain.Address;
+import com.simoncomputing.app.helloworld.domain.Phone;
+import com.simoncomputing.app.helloworld.domain.User;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = Application.class) 
+public class UserBOTest {
+    @Autowired
+    private UserBO classUnderTest;
+    
+    @Test
+    public void whenInsertingUser_userIsRetrievable() {
+        // arrange
+        User newUser = new UserBuilder("TestFirstName", "TestLastName")
+                        .role("TestRole")
+                        .title("TestTitle")
+                        .build();
+
+        // act
+        User createdUser = this.classUnderTest.insertUser(newUser);
+        User retrievedUser = this.classUnderTest.getUserById(newUser.getId());
+
+        // assert
+        assertThat(newUser.getId()).isNotEqualTo(0);
+        assertThat(retrievedUser).isNotNull();
+        assertThat(retrievedUser.getFirstName()).isEqualTo(newUser.getFirstName());
+        assertThat(retrievedUser.getLastName()).isEqualTo(newUser.getLastName());
+        assertThat(retrievedUser.getRole()).isEqualTo(newUser.getRole());
+        assertThat(retrievedUser.getTitle()).isEqualTo(newUser.getTitle());
+        assertThat(retrievedUser.getActive()).isEqualTo(true);
+        // TODO: add assertions that the `createdUser` is the same as `retrievedUser`
+        assertThat(createdUser).isNotNull();
+        assertThat(createdUser.getId()).isEqualTo(retrievedUser.getId());
+        assertThat(createdUser.getFirstName()).isEqualTo(retrievedUser.getFirstName());
+        assertThat(createdUser.getLastName()).isEqualTo(retrievedUser.getLastName());
+        assertThat(createdUser.getRole()).isEqualTo(retrievedUser.getRole()); 
+        assertThat(createdUser.getTitle()).isEqualTo(retrievedUser.getTitle());
+        assertThat(createdUser.getActive()).isEqualTo(true);
+    }
+    
+    @Test
+    public void whenDeletingUser_userIsNotRetrievable() {
+        //Arrange
+        User newUser = new UserBuilder("TestFirstName", "TestLastName")
+                .role("TestRole")
+                .title("TestTitle")
+                .build();
+        //Act
+        this.classUnderTest.insertUser(newUser);
+        this.classUnderTest.deleteUser(newUser.getId());
+        User shouldNotExist = this.classUnderTest.getUserById(newUser.getId());
+
+         
+        //Assert
+        assertThat(shouldNotExist).isNull();
+    }
+    
+    @Test
+    public void afterInsertingManyUsers_allUsersRetrievableInList() {
+        //Arrange
+        List<Integer> inserted = new ArrayList<>();
+        
+
+        for (int i = 0; i < 20; i++) {
+            User newUser = new UserBuilder("TestFirstName_" + i, "TestLastName_" + i).build();
+            this.classUnderTest.insertUser(newUser);
+            inserted.add(newUser.getId());
+        }
+        //Act    
+        List<User> result = this.classUnderTest.getAllUsers();
+        
+        //Assert
+        assertThat(result.size()).isGreaterThanOrEqualTo(20);
+        StringBuffer sb = new StringBuffer();
+        for (User user : result) {
+            sb.append(user.toString());
+        }
+        String userDump = sb.toString();
+        for (int i = 0; i < 5; i++) {
+            assertThat(userDump).contains("firstName=TestFirstName_" + i + ",");
+            assertThat(userDump).contains("lastName=TestLastName_" + i + ",");
+        }
+
+
+    }
+    
+    @Test
+    public void whenEditingUser_firstNameCanBeEdited() {
+        //Assert
+        final String expected = "no big deal";
+        User newUser = new UserBuilder("originalFN", "originalLN").build();
+        this.classUnderTest.insertUser(newUser);
+        Integer userId = newUser.getId();
+        
+        User updUser = new UserBuilder("originalFNN", "originalLN").build();
+        updUser.setId(userId);
+        updUser.setFirstName(expected);
+        //this.classUnderTest.insertUser(updUser);
+        //Integer id2 = updUser.getId();
+        
+        
+        assertThat(newUser.getFirstName()).isNotEqualTo(updUser.getFirstName());
+        //User retrieveMe = this.classUnderTest.getUserById(id2);
+        
+       // assertThat(retrieveMe).isNotNull();
+       // assertThat(retrieveMe.getFirstName()).isEqualTo(expected);
+        
+        //Act
+        User updatedUser = this.classUnderTest.updateUser(updUser);
+        User retrievedUser = this.classUnderTest.getUserById(userId);
+        
+        //Assert
+        assertThat(retrievedUser).isNotNull();
+        assertThat(retrievedUser.getId()).isEqualTo(userId);
+        assertThat(retrievedUser.getFirstName()).isEqualTo(expected);
+        // Add assertions that 'updatdUser' is the same as 'retrievedUser'
+        assertThat(updatedUser.getFirstName()).isEqualTo(retrievedUser.getFirstName());
+    }
+    
+    @Test
+    public void whenEditingUser_lastNameCanBeEdited() {
+        //Arrange
+        final String expected = "expectedLastName";
+        User newUser = new UserBuilder("originalFN", "originalLN").build();
+        
+        this.classUnderTest.insertUser(newUser);
+        Integer uid1 = newUser.getId();
+        
+        User updUser = new UserBuilder("originalFN", "originalLNN").build();
+        updUser.setId(uid1);
+        updUser.setLastName(expected);
+        
+        assertThat(newUser.getLastName()).isNotEqualTo(updUser.getLastName());
+        
+        //Act
+        User updatedUser = this.classUnderTest.updateUser(updUser);
+        User retrievedUser = this.classUnderTest.getUserById(uid1);
+        
+        //Assert
+        assertThat(retrievedUser).isNotNull();
+        assertThat(retrievedUser.getId()).isEqualTo(uid1);
+        assertThat(retrievedUser.getLastName()).isEqualTo(expected);
+        assertThat(retrievedUser.getLastName()).isEqualTo(updatedUser.getLastName());
+    }
+    
+    @Test
+    public void whenEditingUser_roleCanBeEdited() {
+        //Arrange
+        final String expected = "expectedRole";
+        User newUser = new UserBuilder("originalFN", "originalLN").role("originalRole").build();
+        this.classUnderTest.insertUser(newUser);
+        Integer uid1 = newUser.getId();
+        
+        User updUser = new UserBuilder("originalFN", "originalLN").build();
+        updUser.setId(uid1);
+        updUser.setRole(expected);
+        
+        assertThat(newUser.getRole()).isNotEqualTo(updUser.getRole());
+        
+        //Act
+        User updatedUser = this.classUnderTest.updateUser(updUser);
+        User retrievedUser = this.classUnderTest.getUserById(uid1);
+        
+        //Assert
+        assertThat(retrievedUser).isNotNull();
+        assertThat(retrievedUser.getId()).isEqualTo(uid1);
+        assertThat(retrievedUser.getRole()).isEqualTo(expected);
+        
+        assertThat(retrievedUser.getRole()).isEqualTo(updatedUser.getRole());
+    }
+    
+    @Test
+    public void whenEditingUser_titleCanBeEdited() {
+        //Arrange
+        final String expected = "expectedTitle";
+        User newUser = new UserBuilder("originalFN", "originalLN").title("originalTitle").build();
+        this.classUnderTest.insertUser(newUser);
+        Integer uid1 = newUser.getId();
+        
+        User updUser = new UserBuilder("originalFN", "originalLN").build();
+        updUser.setId(uid1);
+        updUser.setTitle(expected);
+        
+        assertThat(newUser.getTitle()).isNotEqualTo(updUser.getTitle());
+        
+        //Act
+        User updatedUser = this.classUnderTest.updateUser(updUser);
+        User retrievedUser = this.classUnderTest.getUserById(uid1);
+        
+        //Assert
+        assertThat(retrievedUser).isNotNull();
+        assertThat(retrievedUser.getId()).isEqualTo(uid1);
+        assertThat(retrievedUser.getTitle()).isEqualTo(expected);
+        
+        assertThat(retrievedUser.getTitle()).isEqualTo(updatedUser.getTitle());
+    }
+    
+    @Test
+    public void whenEditingUser_activeCanBeEdited() {
+        //Arrange
+        final Boolean expected = false;
+        User newUser = new UserBuilder("originalFN", "originalLN").build();
+        this.classUnderTest.insertUser(newUser);
+        Integer uid1 = newUser.getId();
+        
+        User updUser = new UserBuilder("originalFN", "originalLN").build();
+        updUser.setId(uid1);
+        updUser.setActive(expected);
+        
+        assertThat(newUser.getActive()).isNotEqualTo(updUser.getActive());
+        
+        //Act
+        User updatedUser = this.classUnderTest.updateUser(updUser);
+        User retrievedUser = this.classUnderTest.getUserById(uid1);
+        
+        //Assert
+        assertThat(retrievedUser).isNotNull();
+        assertThat(retrievedUser.getId()).isEqualTo(uid1);
+        assertThat(retrievedUser.getActive()).isEqualTo(expected);
+        
+        assertThat(retrievedUser.getActive()).isEqualTo(updatedUser.getActive());
+    }
+
+    // With User Address
+
+    @Test
+    public void whenInsertingUserWithAddress_userIsRetrievableWithAddress() {
+        //Arrange
+        User newUser = new UserBuilder("originalFN", "originalLN").build();
+        Address newAddr = new Address();
+        newAddr.setStreet("myStreet");
+        newAddr.setCity("myCity");
+        newAddr.setState("AB");
+        newAddr.setZip("myZip");
+
+        newUser.setAddress(newAddr);
+        
+        this.classUnderTest.insertUser(newUser);
+        Integer uid = newUser.getId();
+
+        assertThat(newUser).isNotNull();
+        assertThat(newUser.getAddress()).isNotNull();
+        assertThat(newUser.getAddress()).isEqualToComparingFieldByField(newAddr);
+        assertThat(newAddr).isNotNull();
+        
+        //Act
+        User retrievedUser = classUnderTest.getUserById(uid);
+        // **Should the following line be List<Address>? because multiple addresses can have the same uid**
+        //    Solved this problem by limiting uid to be UNIQUE in schema.sql
+        Address retrievedAddress = retrievedUser.getAddress();
+        
+        //Assert
+        assertThat(retrievedUser).isNotNull();
+        assertThat(retrievedAddress).isNotNull();
+        assertThat(retrievedAddress).isEqualToComparingFieldByField(newAddr);
+    }
+
+    @Test
+    public void whenDeletingUserWithAddress_userIsNotRetrievableAndNeitherIsAddress() {
+        //Arrange
+        User newUser = new UserBuilder("originalFN", "originalLN").build();
+        Address newAddr = new Address();
+        newAddr.setStreet("myStreet");
+        newAddr.setCity("myCity");
+        newAddr.setState("AB");
+        newAddr.setZip("myZip");
+        
+        newUser.setAddress(newAddr);
+        
+        this.classUnderTest.insertUser(newUser);
+        Integer uid = newUser.getId();
+        
+        assertThat(newUser).isNotNull();
+        assertThat(newUser.getAddress()).isNotNull();
+        
+        User retrievedUser = this.classUnderTest.getUserById(uid);
+        assertThat(retrievedUser).isNotNull();
+        assertThat(retrievedUser.simpleEquals(newUser));
+        Address retrievedAddress = retrievedUser.getAddress();
+        assertThat(retrievedAddress).isNotNull();
+        assertThat(retrievedAddress.fieldsEqualTo(newAddr));
+        
+        //Act
+        this.classUnderTest.deleteUser(uid);
+
+
+        
+        //Assert
+        User deletedUser = this.classUnderTest.getUserById(uid);
+        assertThat(deletedUser).isNull();
+        Address deletedAddress = this.classUnderTest.getAddressByUserId(uid);
+        assertThat(deletedAddress).isNull();
+        
+    }  
+
+    @Test
+    public void whenEditingUserAddress_streetCanBeEdited() {
+        //Arrange
+        User newUser = new UserBuilder("originalFN", "originalLN").build();
+        Address newAddr = new Address();
+        newAddr.setStreet("myStreet");
+        
+        newUser.setAddress(newAddr);
+        
+        this.classUnderTest.insertUser(newUser);
+        Integer uid = newUser.getId();
+        
+        assertThat(newUser).isNotNull();
+        assertThat(newAddr).isNotNull();
+        assertThat(newAddr.getId()).isNotNull();
+        
+        Address updatedAddr = new Address();
+        updatedAddr.setStreet("newStreet");
+        updatedAddr.setId(newAddr.getId());
+        
+        assertThat(newAddr.getStreet()).isNotEqualTo(updatedAddr.getStreet());
+        
+        //Act
+        User retrievedUser = this.classUnderTest.getUserById(uid);
+        this.classUnderTest.updateAddressWrapper(retrievedUser, updatedAddr);
+        
+        //Assert
+        Address changed = retrievedUser.getAddress();
+        assertThat(changed.getStreet()).isEqualTo(updatedAddr.getStreet());
+        assertThat(changed.getStreet()).isNotEqualTo(newAddr.getStreet());
+        
+    }
+
+    @Test
+    public void whenEditingUserAddress_cityCanBeEdited() {
+        //Arrange
+        User newUser = new UserBuilder("originalFN", "originalLN").build();
+        Address newAddr = new Address();
+        newAddr.setCity("myCity");
+        
+        newUser.setAddress(newAddr);
+        
+        this.classUnderTest.insertUser(newUser);
+        Integer uid = newUser.getId();
+        
+        assertThat(newUser).isNotNull();
+        assertThat(newAddr).isNotNull();
+        assertThat(newAddr.getId()).isNotNull();
+        
+        Address updatedAddr = new Address();
+        updatedAddr.setCity("newCity");
+        updatedAddr.setId(newAddr.getId());
+        
+        assertThat(newAddr.getCity()).isNotEqualTo(updatedAddr.getCity());
+        
+        //Act
+        User retrievedUser = this.classUnderTest.getUserById(uid);
+        this.classUnderTest.updateAddressWrapper(retrievedUser, updatedAddr);
+        
+        //Assert
+        Address changed = retrievedUser.getAddress();
+        assertThat(changed.getCity()).isEqualTo(updatedAddr.getCity());
+        assertThat(changed.getCity()).isNotEqualTo(newAddr.getCity());
+        
+    }
+
+    @Test
+    public void whenEditingUserAddress_stateCanBeEdited() {
+        //Arrange
+        User newUser = new UserBuilder("originalFN", "originalLN").build();
+        Address newAddr = new Address();
+        newAddr.setState("AB");
+        
+        newUser.setAddress(newAddr);
+        
+        this.classUnderTest.insertUser(newUser);
+        Integer uid = newUser.getId();
+        
+        assertThat(newUser).isNotNull();
+        assertThat(newAddr).isNotNull();
+        assertThat(newAddr.getId()).isNotNull();
+        
+        Address updatedAddr = new Address();
+        updatedAddr.setState("BC");
+        updatedAddr.setId(newAddr.getId());
+        
+        assertThat(newAddr.getState()).isNotEqualTo(updatedAddr.getState());
+        
+        //Act
+        User retrievedUser = this.classUnderTest.getUserById(uid);
+        this.classUnderTest.updateAddressWrapper(retrievedUser, updatedAddr);
+        
+        //Assert
+        Address changed = retrievedUser.getAddress();
+        assertThat(changed.getState()).isEqualTo(updatedAddr.getState());
+        assertThat(changed.getState()).isNotEqualTo(newAddr.getState());
+        
+    }
+
+    @Test
+    public void whenEditingUserAddress_zipCanBeEdited() {
+        //Arrange
+        User newUser = new UserBuilder("originalFN", "originalLN").build();
+        Address newAddr = new Address();
+        newAddr.setZip("myZip");
+        
+        newUser.setAddress(newAddr);
+        
+        this.classUnderTest.insertUser(newUser);
+        Integer uid = newUser.getId();
+        
+        assertThat(newUser).isNotNull();
+        assertThat(newAddr).isNotNull();
+        assertThat(newAddr.getId()).isNotNull();
+        
+        Address updatedAddr = new Address();
+        updatedAddr.setZip("newZip");
+        updatedAddr.setId(newAddr.getId());
+        
+        assertThat(newAddr.getZip()).isNotEqualTo(updatedAddr.getZip());
+        
+        //Act
+        User retrievedUser = this.classUnderTest.getUserById(uid);
+        this.classUnderTest.updateAddressWrapper(retrievedUser, updatedAddr);
+        
+        //Assert
+        Address changed = retrievedUser.getAddress();
+        assertThat(changed.getZip()).isEqualTo(updatedAddr.getZip());
+        assertThat(changed.getZip()).isNotEqualTo(newAddr.getZip());
+        
+    }
+
+    @Test
+    public void whenEditingUser_andRemovingAddress_addressIsRemoved() {
+        //Arrange
+        User newUser = new UserBuilder("originalFN", "originalLN").build();
+        Address addr = new Address();
+        addr.setStreet("myStreet");
+        addr.setCity("myCity");
+        addr.setState("AB");
+        addr.setZip("myZip");
+        
+        newUser.setAddress(addr);
+        
+        this.classUnderTest.insertUser(newUser);
+        Integer uid = newUser.getId();
+        
+        //Act
+        User retrievedUser = this.classUnderTest.getUserById(uid);
+        this.classUnderTest.deleteAddressWrapper(retrievedUser);
+        
+        //Assert
+        Address deletedAddress = retrievedUser.getAddress();
+        assertThat(retrievedUser).isNotNull();
+        assertThat(deletedAddress.isNull());
+        
+    }
+
+    // With User Phone
+
+    @Test
+    public void whenInsertingUserWithPhone_userIsRetrievableWithPhone() {
+        //Arrange
+        User newUser = new UserBuilder("OriginalFN", "OriginalLN").build();
+        Phone phone = new Phone();
+        phone.setType("myType");
+        phone.setNumber("1234");
+        
+        Phone[] phoneList = {phone};
+        newUser.setPhones(phoneList);
+        
+        assertThat(newUser).isNotNull();
+        assertThat(phone).isNotNull();
+        assertThat(newUser.getPhones()).isNotNull();
+        assertThat(newUser.getPhones()[0]).isEqualTo(phone);
+        
+        //Act
+        this.classUnderTest.insertUser(newUser);
+        Integer uid = newUser.getId();
+        
+        //Assert
+        User retrievedUser = this.classUnderTest.getUserById(uid);
+        assertThat(retrievedUser).isNotNull();
+        assertThat(retrievedUser.getPhones()).isNotNull();
+        assertThat(retrievedUser.getPhones().length).isEqualTo(1);
+    }
+
+    @Test
+    public void whenDeletingUserWithPhoneNumbers_userIsNotRetrievableAndNeitherArePhoneNumbers() {
+        //Arrange
+        User newUser = new UserBuilder("OriginalFN", "OriginalLN").build();
+        Phone phone = new Phone();
+        phone.setType("myType");
+        phone.setNumber("1234");
+        
+        Phone[] phoneList = {phone};
+        newUser.setPhones(phoneList);
+        
+        assertThat(newUser).isNotNull();
+        assertThat(phone).isNotNull();
+        assertThat(newUser.getPhones()).isNotNull();
+        assertThat(newUser.getPhones().length > 0);
+        assertThat(newUser.getPhones()[0]).isEqualTo(phone);
+        assertThat(newUser.getPhones()[0].getType()).isEqualTo("myType");
+        assertThat(newUser.getPhones()[0].getNumber()).isEqualTo("1234");
+        
+        this.classUnderTest.insertUser(newUser);
+        Integer uid = newUser.getId();
+        
+        User retrievedUser = this.classUnderTest.getUserById(uid);
+        assertThat(retrievedUser).isNotNull();
+        assertThat(retrievedUser.simpleEquals(newUser));
+        Phone[] retrievedPhones = retrievedUser.getPhones();
+        assertThat(retrievedPhones).isNotNull();
+        assertThat(retrievedPhones.length == 1);
+        assertThat(retrievedPhones[0].fieldsEqualTo(phone));
+        assertThat(retrievedPhones[0].getNumber()).isEqualTo("1234");
+        List<Phone> alsoRetrievedPhones = this.classUnderTest.getPhonesByUserId(uid);
+        assertThat(alsoRetrievedPhones).isNotNull();
+        assertThat(alsoRetrievedPhones.size() == 1);
+        assertThat(alsoRetrievedPhones.get(0).fieldsEqualTo(phone));
+        //assertThat(retrievedPhones).isEqualTo(alsoRetrievedPhones);
+        
+        //Act
+        this.classUnderTest.deleteUser(uid);
+        
+        //Assert
+        User deletedUser = this.classUnderTest.getUserById(uid);
+        assertThat(deletedUser).isNull();
+        List<Phone> deletedPhones = this.classUnderTest.getPhonesByUserId(uid);
+        assertThat(deletedPhones).isEmpty();
+        
+    }  
+
+    @Test
+    public void whenEditingUserPhones_retrievedUserHasOnlyEditedData() {
+        //Arrange
+        User newUser = new UserBuilder("OriginalFN", "OriginalLN").build();
+        ArrayList<Phone> phoneList = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            Phone temp = new Phone();
+            temp.setType("myType" + i);
+            temp.setNumber("zzz" + i);
+            phoneList.add(temp);
+        }
+
+        newUser.setPhones(phoneList.toArray(new Phone[phoneList.size()]));
+        
+        assertThat(newUser).isNotNull();
+        assertThat(newUser.getPhones()).isNotNull();
+        assertThat(newUser.getPhones().length == 3);
+        
+        this.classUnderTest.insertUser(newUser);
+        Integer uid = newUser.getId();
+        
+        User retrievedUser = this.classUnderTest.getUserById(uid);
+        Phone[] retrievedPhones = retrievedUser.getPhones();
+        
+        for (int i = 0; i < 3; i++) {
+            assertThat(retrievedPhones[i].getType()).isEqualTo("myType"+i);
+            assertThat(retrievedPhones[i].getNumber()).isEqualTo("zzz"+i);
+        }
+        
+        //Act
+        ArrayList<Phone> newPhones = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            Phone temp = new Phone();
+            temp.setType("myNewType"+i);
+            temp.setNumber("myNewNumber"+i);
+            newPhones.add(temp);
+        }
+        
+        this.classUnderTest.overwritePhones(retrievedUser, newPhones.toArray(new Phone[phoneList.size()]));
+        
+        Phone[] newRetrievedPhones = retrievedUser.getPhones();
+        //Assert
+        assertThat(newRetrievedPhones.length == 3);
+        for (int i = 0; i < 3; i++) {
+            assertThat(newRetrievedPhones[i].getType()).isEqualTo("myNewType"+i);
+            assertThat(newRetrievedPhones[i].getNumber()).isEqualTo("myNewNumber"+i);
+        }
+
+    }
+
+    @Test
+    public void whenAddingPhones_retrievedUserIncludesOldPlusNewPhones() {
+        //Arrange
+        User testUser = new UserBuilder("OriginalFN", "OriginalLN").build();
+        ArrayList<Phone> listPhones = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            Phone tempPhone = new Phone();
+            tempPhone.setType("myType"+i);
+            tempPhone.setNumber("myNumber"+i);
+            listPhones.add(tempPhone);
+        }
+        
+        testUser.setPhones(listPhones.toArray(new Phone[listPhones.size()]));
+        
+        assertThat(testUser).isNotNull();
+        assertThat(testUser.getPhones()).isNotNull();
+        assertThat(testUser.getPhones().length).isEqualTo(5);
+        
+        this.classUnderTest.insertUser(testUser);
+        Integer uid = testUser.getId();
+        
+        //Act
+        User retrievedUser = this.classUnderTest.getUserById(uid);
+        assertThat(retrievedUser.getPhones().length).isEqualTo(5);
+        ArrayList<Phone> retrievedListPhones = new ArrayList<>(Arrays.asList(retrievedUser.getPhones()));
+        for (int i = 0; i < 5; i++) {
+            Phone tempPhone = new Phone();
+            tempPhone.setType("myType"+ i+5);
+            tempPhone.setNumber("myNumber"+ i+5);
+            retrievedListPhones.add(tempPhone);
+        }
+        testUser.setPhones(retrievedListPhones.toArray(new Phone[retrievedListPhones.size()]));
+        
+        assertThat(testUser.getPhones().length).isEqualTo(10);
+        
+        this.classUnderTest.updateUser(testUser);
+        
+        //Assert
+        User updatedUser = this.classUnderTest.getUserById(uid);
+        assertThat(updatedUser).isNotNull();
+        assertThat(updatedUser.getPhones()).isNotNull();
+        ArrayList<Phone> updatedListPhones = new ArrayList<>(Arrays.asList(updatedUser.getPhones()));
+        assertThat(updatedListPhones.size()).isEqualTo(10);
+        for (int i = 0; i < 10; i++) {
+            assertThat(updatedListPhones.get(i).getType()).isEqualTo("myType"+i);
+            assertThat(updatedListPhones.get(i).getNumber()).isEqualTo("myNumber"+i);
+        }
+    }
+/*
+    @Test
+    public void whenRemovingPhones_retrievedUserHasOnlyRemainingPhones() {
+        fail("not implemented");
+    }
+
+    // Some other weird cases
+
+    @Test
+    public void whenUpdatingUser_andUserDoesNotExist() {
+        // if we know what we want the service layer to do, write the test
+        fail("not implemented");
+    }
+
+    @Test
+    public void whenDeletingUser_andUserDoesNotExist() {
+        // if we know what we want the service layer to do, write the test
+        fail("not implemented");
+    }    */
+}
+
+

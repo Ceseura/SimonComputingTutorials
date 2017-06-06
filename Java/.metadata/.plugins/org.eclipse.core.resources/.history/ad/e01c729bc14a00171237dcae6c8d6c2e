@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatix.org/DTD Mapper 3.0//EN"
+    "http://mbatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.simoncomputing.app.helloworld.dao.UserAddressDAO">
+
+    <select id="getAddressByUserId" parameterType="int" resultType="Address">
+        SELECT id, street, city, state, zip
+        FROM user_address
+        WHERE user_id = #{user_Id}
+    </select>
+    
+    <insert id="insertAddress" useGeneratedKeys="true" keyProperty="address.id">
+        INSERT INTO user_address (user_id, street, city, state, zip)
+        VALUES (#{user_id}, #{address.street}, #{address.city}, #{address.state}, #{address.zip})
+    </insert>
+    
+    <update id="updateAddress">
+        UPDATE user_address
+        SET street=#{address.street}, city=#{address.city}, state=#{address.state}, zip=#{address.zip}
+        WHERE user_id = #{user_id}
+    </update>
+    
+    <delete id="deleteAddress" parameterType="int">
+        DELETE FROM user_address WHERE user_id = #{user_id}
+    </delete>
+</mapper>

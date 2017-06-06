@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.simoncomputing.app.helloworld.dao.UserDAO">
+  <select id="getUserById" parameterType="int" resultType="user">
+    SELECT
+      id,
+      first_name,
+      last_name,
+      role,
+      title,
+      active
+    FROM user
+    WHERE id = #{id}
+  </select>
+
+  <resultMap id="userResult" type="user">
+    <id property="id" column="id" />
+    <result property="firstName" column="first_name" />
+    <result property="lastName" column="last_name" />
+    <result property="role" column="role" />
+    <result property="title" column="title" />
+    <result property="active" column="active" />
+  </resultMap>
+
+  <select id="getAllUsers" resultMap="userResult">
+    SELECT * FROM user
+  </select>
+
+  <insert id="insertUser" parameterType="user" useGeneratedKeys="true" keyProperty="id">
+    INSERT INTO user (first_name, last_name, role, title, active)
+    VALUES (#{firstName}, #{lastName}, #{role}, #{title}, #{active})
+  </insert>
+
+  <update id="updateUser" parameterType="user">
+    UPDATE user
+    SET
+      first_name = #{firstName},
+      last_name = #{lastName},
+      role = #{role},
+      title = #{title},
+      active = #{active}
+    WHERE id = #{id}
+  </update>
+
+  <delete id="deleteUser" parameterType="int">
+    DELETE FROM user WHERE id = #{id}
+  </delete>
+</mapper>

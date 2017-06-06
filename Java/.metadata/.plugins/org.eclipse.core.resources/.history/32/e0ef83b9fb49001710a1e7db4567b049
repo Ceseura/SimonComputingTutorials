@@ -1,0 +1,47 @@
+package com.simoncomputing.app.helloworld.bo;
+
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+import com.simoncomputing.app.helloworld.dao.UserAddressDAO;
+import com.simoncomputing.app.helloworld.dao.UserDAO;
+import com.simoncomputing.app.helloworld.dao.UserPhoneDAO;
+import com.simoncomputing.app.helloworld.domain.User;
+
+@Component
+public class UserBO {
+
+    private final UserDAO userDAO;
+    private final UserAddressDAO userAddressDAO;
+    private final UserPhoneDAO userPhoneDAO;
+    
+    public UserBO(UserDAO userDAO, UserAddressDAO userAddressDAO, UserPhoneDAO userPhoneDAO) {
+        this.userDAO = userDAO;
+        this.userAddressDAO = userAddressDAO;
+        this.userPhoneDAO = userPhoneDAO;
+    }
+    
+    public User insertUser(User user) {
+        this.userDAO.insertUser(user);
+        return user;
+    }
+    
+    public User getUserById(Integer userId) {
+        return this.userDAO.getUserById(userId);
+    }
+    
+    public List<User> getAllUsers() {
+        return this.userDAO.getAllUsers();
+    }
+
+    public User updateUser(User user) {
+        this.userDAO.updateUser(user);
+        return user;
+    }
+
+    public void deleteUser(Integer userId) {
+        this.userDAO.deleteUser(userId);
+    }
+
+}

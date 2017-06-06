@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.SpringBootApplication"/>
+<fullyQualifiedTypeName name="org.springframework.boot.SpringApplication"/>
+<fullyQualifiedTypeName name="org.mybatis.spring.annotation.MapperScan"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType"/>
+<fullyQualifiedTypeName name="org.mybatis.spring.SqlSessionFactoryBean"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.ResultMap"/>
+<fullyQualifiedTypeName name="org.apache.tomcat.jdbc.pool.DataSource"/>
+<fullyQualifiedTypeName name="javax.sql.DataSource"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.SelectKey"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Insert"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Update"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Param"/>
+<fullyQualifiedTypeName name="org.springframework.test.context.junit4.SpringRunner"/>
+<fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
+<fullyQualifiedTypeName name="org.springframework.boot.test.context.SpringBootTest"/>
+<fullyQualifiedTypeName name="com.simoncomputing.app.helloworld.Application"/>
+<fullyQualifiedTypeName name="com.simoncomputing.app.helloworld.dao.UserDAO"/>
+<fullyQualifiedTypeName name="com.simoncomputing.app.helloworld.dao.UserAddressDAO"/>
+<fullyQualifiedTypeName name="com.simoncomputing.app.helloworld.dao.UserPhoneDAO"/>
+<fullyQualifiedTypeName name="com.simoncomputing.app.helloworld.domain.User"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+<fullyQualifiedTypeName name="com.simoncomputing.app.helloworld.bo.utils.UserBuilder"/>
+<fullyQualifiedTypeName name="com.simoncomputing.app.helloworld.domain.Address"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.simoncomputing.app.helloworld.domain.Phone"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Select"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Results"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Delete"/>
+</qualifiedTypeNameHistroy>

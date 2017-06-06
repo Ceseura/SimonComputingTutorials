@@ -1,0 +1,54 @@
+package com.simoncomputing.app.helloworld.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Results;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectKey;
+import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.ResultMap;
+import org.apache.ibatis.annotations.One;
+import org.apache.ibatis.annotations.Many;
+
+import com.simoncomputing.app.helloworld.domain.Address;
+import com.simoncomputing.app.helloworld.domain.Phone;
+import com.simoncomputing.app.helloworld.domain.User;
+
+public interface UserDAO {
+    
+    @Insert("INSERT INTO user( first_name, last_name, role, title, active ) " 
+            + " VALUES( #{firstName}, #{lastName}, #{role}, #{title}, ${active ? '1' : '0'} )")
+    @SelectKey(statement="call identity()", keyProperty="id", before=false, resultType=Integer.class)
+    void insertUser(User user);
+    
+    @Select("SELECT * FROM user WHERE id = #{id}")
+    @Results(id = "userResults", value= {
+            @Result(property="address", column="user_id",
+                    javaType=Address.class,
+                    one=@One(select="com.simoncomputing.app.helloworld.dao.UserAddressDAO.getAddressByUserId")),
+            @Result(property="phones", column="user_id",
+                    javaType=Phone.class,
+                    many=@Many(select="com.simoncomputing.app.helloworld.dao.UserPhoneDAO.getPhonesByUserId"))
+    })
+    User getUserById(@Param("id") Integer id);
+    
+    @Select("SELECT * FROM user")
+    @ResultMap("userResults")
+    List<User> getAllUsers();
+    
+    @Update (" UPDATE user SET "
+            + " first_name = #{firstName}, "
+            + " last_name = #{lastName}, "
+            + " role = #{role}, "
+            + " title = #{title}, "
+            + " active = #{active}, "
+            + " WHERE id = #{id} ")
+    void updateUser(User user);
+    
+    @Delete("DELETE FROM user WHERE id = #{id}")
+    void deleteUser(Integer id);
+}

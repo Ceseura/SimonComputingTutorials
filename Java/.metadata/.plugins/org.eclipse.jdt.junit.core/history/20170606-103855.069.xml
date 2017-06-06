@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserBOTest" project="springboot" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.425">
+    <testcase name="whenEditingUserPhones_retrievedUserHasOnlyEditedData" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.269"/>
+    <testcase name="whenAddingPhones_retrievedUserIncludesOldPlusNewPhones" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.054"/>
+    <testcase name="whenInsertingUserWithPhone_userIsRetrievableWithPhone" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.026"/>
+    <testcase name="whenDeletingUserWithPhoneNumbers_userIsNotRetrievableAndNeitherArePhoneNumbers" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.028"/>
+    <testcase name="whenRemovingPhones_retrievedUserHasOnlyRemainingPhones" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.048"/>
+  </testsuite>
+</testrun>

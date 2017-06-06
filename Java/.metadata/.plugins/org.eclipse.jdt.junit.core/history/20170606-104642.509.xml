@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserBOTest" project="springboot" tests="21" started="21" failures="0" errors="0" ignored="0">
+  <testsuite name="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.764">
+    <testcase name="whenEditingUser_lastNameCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.249"/>
+    <testcase name="whenEditingUser_firstNameCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.015"/>
+    <testcase name="whenEditingUserPhones_retrievedUserHasOnlyEditedData" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.032"/>
+    <testcase name="whenEditingUserAddress_stateCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.013"/>
+    <testcase name="whenEditingUserAddress_cityCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.015"/>
+    <testcase name="whenEditingUser_andRemovingAddress_addressIsRemoved" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.017"/>
+    <testcase name="whenAddingPhones_retrievedUserIncludesOldPlusNewPhones" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.119"/>
+    <testcase name="whenEditingUserAddress_streetCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.011"/>
+    <testcase name="whenInsertingUserWithPhone_userIsRetrievableWithPhone" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.01"/>
+    <testcase name="whenEditingUserAddress_zipCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.013"/>
+    <testcase name="whenUpdatingUser_andUserDoesNotExist" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.003"/>
+    <testcase name="whenEditingUser_activeCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.016"/>
+    <testcase name="whenInsertingUserWithAddress_userIsRetrievableWithAddress" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.027"/>
+    <testcase name="whenEditingUser_roleCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.014"/>
+    <testcase name="whenInsertingUser_userIsRetrievable" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.012"/>
+    <testcase name="afterInsertingManyUsers_allUsersRetrievableInList" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.101"/>
+    <testcase name="whenDeletingUserWithPhoneNumbers_userIsNotRetrievableAndNeitherArePhoneNumbers" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.029"/>
+    <testcase name="whenDeletingUserWithAddress_userIsNotRetrievableAndNeitherIsAddress" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.013"/>
+    <testcase name="whenDeletingUser_userIsNotRetrievable" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.009"/>
+    <testcase name="whenEditingUser_titleCanBeEdited" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.01"/>
+    <testcase name="whenRemovingPhones_retrievedUserHasOnlyRemainingPhones" classname="com.simoncomputing.app.helloworld.bo.UserBOTest" time="0.036"/>
+  </testsuite>
+</testrun>

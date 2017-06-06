@@ -1,0 +1,68 @@
+package com.simoncomputing.app.helloworld.bo;
+
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+import com.simoncomputing.app.helloworld.dao.UserAddressDAO;
+import com.simoncomputing.app.helloworld.dao.UserDAO;
+import com.simoncomputing.app.helloworld.dao.UserPhoneDAO;
+import com.simoncomputing.app.helloworld.domain.Address;
+import com.simoncomputing.app.helloworld.domain.User;
+
+@Component
+public class UserBO {
+
+    private final UserDAO userDAO;
+    private final UserAddressDAO userAddressDAO;
+    private final UserPhoneDAO userPhoneDAO;
+    
+    public UserBO(UserDAO userDAO, UserAddressDAO userAddressDAO, UserPhoneDAO userPhoneDAO) {
+        this.userDAO = userDAO;
+        this.userAddressDAO = userAddressDAO;
+        this.userPhoneDAO = userPhoneDAO;
+    }
+    
+    public User insertUser(User user) {
+        //Insert the user
+        this.userDAO.insertUser(user);
+        //Also insert address in the addressDatabase if it is not null
+        if (user.getAddress() != null) {
+            this.insertAddress(user.getId(), user.getAddress());
+        }
+        return user;
+    }
+    
+    public User getUserById(Integer userId) {
+        User returnMe = this.userDAO.getUserById(userId);
+        //Also search address database, set user.address field if address found
+        Address userAddress = this.getAddressByUserId(userId);
+        if (userAddress != null) {
+            returnMe.setAddress(userAddress);
+        }
+        return returnMe;
+    }
+    
+    public List<User> getAllUsers() {
+        return this.userDAO.getAllUsers();
+    }
+
+    public User updateUser(User user) {
+        this.userDAO.updateUser(user);
+        return user;
+    }
+
+    public void deleteUser(Integer userId) {
+        this.userDAO.deleteUser(userId);
+    }
+    
+    public Address insertAddress(Integer userId, Address address) {
+        this.userAddressDAO.insertAddress(userId, address);
+        return address;
+    }
+    
+    public Address getAddressByUserId(Integer userId) {
+        return this.userAddressDAO.getAddressByUserId(userId);
+    }
+
+}

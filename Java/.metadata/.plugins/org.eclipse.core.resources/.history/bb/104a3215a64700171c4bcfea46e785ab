@@ -1,0 +1,31 @@
+package com.simoncomputing.app.helloworld;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+@MapperScan("com.simoncomputing.ap.helloworld.dao")
+public class Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+
+	@Bean
+	public DataSource dataSource() {
+		return new EmbeddedDatebaseBuilder()
+			.setType(EmbeddedDatabaseType.H2)
+			.addScript("schema.sql")
+			.build();
+	}
+
+	@Bean
+	public SqlSessionFactory sqlSessionFactory() throws Exception {
+		SqlSssionFactoryBean sessionFactoryBean = new SqlSessionFactoryBean();
+		sessionFactoryBean.setDataSource(dataSource());
+		SqlSessionFactory sessionFactory = sessionFactoryBean.getObject();
+		sessionFactory.getConfiguration().setMapUnderscoreToCamelCase(true);
+		return sessionFactory;
+	}
+}
+
