@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_wuQz4EreEeeGxZyL051UyA" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_wuQz4UreEeeGxZyL051UyA" bindingContexts="_wuT3bkreEeeGxZyL051UyA">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UserAddressDAO.java&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserAddressDAO.java&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserAddressDAO.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;UserAddressDAO.xml&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserAddressDAO.xml&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserAddressDAO.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;UserPhoneDAO.xml&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserPhoneDAO.xml&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserPhoneDAO.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;UserPhoneDAO.xml&quot; tooltip=&quot;springboot/src/main/resources/UserPhoneDAO.xml&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/resources/UserPhoneDAO.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UserBuilder.java&quot; tooltip=&quot;springboot/src/test/java/com/simoncomputing/app/helloworld/bo/utils/UserBuilder.java&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/test/java/com/simoncomputing/app/helloworld/bo/utils/UserBuilder.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;PhoneDAO.xml&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/dao/PhoneDAO.xml&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/dao/PhoneDAO.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;UserDAO.xml&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserDAO.xml&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserDAO.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;CharBooleanTypeHandler.java&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/dao/CharBooleanTypeHandler.java&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/dao/CharBooleanTypeHandler.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Application.java&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/Application.java&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/Application.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UserDAO.java&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserDAO.java&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserDAO.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UserPhoneDAO.java&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserPhoneDAO.java&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserPhoneDAO.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.datatools.sqltools.sqlscrapbook.SQLScrapbookEditor&quot; name=&quot;schema.sql&quot; tooltip=&quot;springboot/src/main/resources/schema.sql&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/resources/schema.sql&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;PhoneDAO.xml&quot; tooltip=&quot;springboot/src/main/resources/com/simoncomputing/app/helloworld/dao/PhoneDAO.xml&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/resources/com/simoncomputing/app/helloworld/dao/PhoneDAO.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;com.genuitec.eclipse.webclipse.dashboard.elementFactory&quot; id=&quot;com.genuitec.eclipse.webclipse.dashboard.editor&quot; name=&quot;Dashboard&quot; tooltip=&quot;Dashboard&quot;>&#xA;&lt;persistable openDashboard=&quot;true&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UserBOTest.java&quot; tooltip=&quot;springboot/src/test/java/com/simoncomputing/app/helloworld/bo/UserBOTest.java&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/test/java/com/simoncomputing/app/helloworld/bo/UserBOTest.java&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;UserAddressDAO.xml&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserAddressDAO.xml&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserAddressDAO.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UserAddressDAO.java&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserAddressDAO.java&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserAddressDAO.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;com.genuitec.eclipse.webclipse.dashboard.elementFactory&quot; id=&quot;com.genuitec.eclipse.webclipse.dashboard.editor&quot; name=&quot;Dashboard&quot; tooltip=&quot;Dashboard&quot;>&#xA;&lt;persistable openDashboard=&quot;true&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;UserPhoneDAO.xml&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserPhoneDAO.xml&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserPhoneDAO.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;UserPhoneDAO.xml&quot; tooltip=&quot;springboot/src/main/resources/UserPhoneDAO.xml&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/resources/UserPhoneDAO.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UserBuilder.java&quot; tooltip=&quot;springboot/src/test/java/com/simoncomputing/app/helloworld/bo/utils/UserBuilder.java&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/test/java/com/simoncomputing/app/helloworld/bo/utils/UserBuilder.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;PhoneDAO.xml&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/dao/PhoneDAO.xml&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/dao/PhoneDAO.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;UserDAO.xml&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserDAO.xml&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserDAO.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;CharBooleanTypeHandler.java&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/dao/CharBooleanTypeHandler.java&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/dao/CharBooleanTypeHandler.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Application.java&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/Application.java&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/Application.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UserDAO.java&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserDAO.java&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserDAO.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UserPhoneDAO.java&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserPhoneDAO.java&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserPhoneDAO.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.datatools.sqltools.sqlscrapbook.SQLScrapbookEditor&quot; name=&quot;schema.sql&quot; tooltip=&quot;springboot/src/main/resources/schema.sql&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/resources/schema.sql&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;PhoneDAO.xml&quot; tooltip=&quot;springboot/src/main/resources/com/simoncomputing/app/helloworld/dao/PhoneDAO.xml&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/main/resources/com/simoncomputing/app/helloworld/dao/PhoneDAO.xml&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UserBOTest.java&quot; tooltip=&quot;springboot/src/test/java/com/simoncomputing/app/helloworld/bo/UserBOTest.java&quot;>&#xA;&lt;persistable path=&quot;/springboot/src/test/java/com/simoncomputing/app/helloworld/bo/UserBOTest.java&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
   <children xsi:type="basic:TrimmedWindow" xmi:id="_wuQz4UreEeeGxZyL051UyA" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_wuQz4kreEeeGxZyL051UyA" label="%trimmedwindow.label.eclipseSDK" x="0" y="-1027" width="1636" height="974">
@@ -187,7 +187,6 @@
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
         <tags>active</tags>
-        <tags>noFocus</tags>
         <children xsi:type="basic:Part" xmi:id="_wuSCSUreEeeGxZyL051UyA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="UserBOTest.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UserBOTest.java&quot; partName=&quot;UserBOTest.java&quot; title=&quot;UserBOTest.java&quot; tooltip=&quot;springboot/src/test/java/com/simoncomputing/app/helloworld/bo/UserBOTest.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/springboot/src/test/java/com/simoncomputing/app/helloworld/bo/UserBOTest.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;27703&quot; selectionTopPixel=&quot;1125&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
@@ -283,11 +282,12 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_wuSCWkreEeeGxZyL051UyA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="UserBO.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UserBO.java&quot; partName=&quot;UserBO.java&quot; title=&quot;UserBO.java&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/bo/UserBO.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/bo/UserBO.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2712&quot; selectionTopPixel=&quot;606&quot;/>&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UserBO.java&quot; partName=&quot;UserBO.java&quot; title=&quot;UserBO.java&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/bo/UserBO.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/bo/UserBO.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2712&quot; selectionTopPixel=&quot;542&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
           <tags>active</tags>
+          <tags>activeOnClose</tags>
           <menus xsi:type="menu:PopupMenu" xmi:id="_wuSCW0reEeeGxZyL051UyA" elementId="#CompilationUnitEditorContext">
             <tags>menuContribution:popup</tags>
             <tags>popup:#CompilationUnitEditorContext</tags>
@@ -396,6 +396,12 @@
             <tags>menuContribution:popup</tags>
             <tags>popup:#OverviewRulerContext</tags>
           </menus>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_P1814ErlEeeEe-YQr6zlbA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="UserAddressDAO.xml" iconURI="platform:/plugin/org.eclipse.wst.xml.ui/icons/xmldoc.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;UserAddressDAO.xml&quot; partName=&quot;UserAddressDAO.xml&quot; title=&quot;UserAddressDAO.xml&quot; tooltip=&quot;springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserAddressDAO.xml&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/springboot/src/main/java/com/simoncomputing/app/helloworld/dao/UserAddressDAO.xml&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;345&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart</tags>
+          <tags>removeOnHide</tags>
         </children>
       </children>
     </sharedElements>
@@ -647,40 +653,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_wuSpokreEeeGxZyL051UyA" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSpo0reEeeGxZyL051UyA" elementId="new.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSppEreEeeGxZyL051UyA" elementId="newWizardDropDown">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSppUreEeeGxZyL051UyA" elementId="new.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSppkreEeeGxZyL051UyA" elementId="save.group" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSpp0reEeeGxZyL051UyA" elementId="save">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSpqEreEeeGxZyL051UyA" elementId="saveAll">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSpqUreEeeGxZyL051UyA" elementId="save.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_wuSpqkreEeeGxZyL051UyA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_wuW7MkreEeeGxZyL051UyA"/>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSpq0reEeeGxZyL051UyA" elementId="print.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSprEreEeeGxZyL051UyA" elementId="build.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSprUreEeeGxZyL051UyA" elementId="build.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSprkreEeeGxZyL051UyA" elementId="additions">
-          <tags>Opaque</tags>
-        </children>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_HkadgErlEeeEe-YQr6zlbA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_wuW7MkreEeeGxZyL051UyA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_wuSpr0reEeeGxZyL051UyA" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -688,75 +661,15 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_wuSp6UreEeeGxZyL051UyA" elementId="org.eclipse.ui.edit.text.actionSet.presentation">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp6kreEeeGxZyL051UyA" elementId="Presentation">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp60reEeeGxZyL051UyA" elementId="org.eclipse.jdt.ui.edit.text.java.toggleBreadcrumb">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp7EreEeeGxZyL051UyA" elementId="org.eclipse.jdt.ui.edit.text.java.toggleMarkOccurrences">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp7UreEeeGxZyL051UyA" elementId="org.eclipse.mylyn.java.ui.editor.folding.auto">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp7kreEeeGxZyL051UyA" elementId="org.eclipse.ui.edit.text.toggleWordWrap">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp70reEeeGxZyL051UyA" elementId="org.eclipse.ui.edit.text.toggleBlockSelectionMode">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp8EreEeeGxZyL051UyA" elementId="org.eclipse.ui.edit.text.toggleShowWhitespaceCharacters">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp8UreEeeGxZyL051UyA" elementId="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly" visible="false">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_wuSp8kreEeeGxZyL051UyA" elementId="org.eclipse.debug.ui.launchActionSet">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp80reEeeGxZyL051UyA" elementId="debug">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp9EreEeeGxZyL051UyA" elementId="org.eclipse.debug.internal.ui.actions.DebugDropDownAction">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp9UreEeeGxZyL051UyA" elementId="org.eclipse.debug.internal.ui.actions.RunDropDownAction">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp9kreEeeGxZyL051UyA" elementId="org.eclipse.ui.externaltools.ExternalToolMenuDelegateToolbar">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_wuSp90reEeeGxZyL051UyA" elementId="org.eclipse.jdt.ui.JavaElementCreationActionSet">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp-EreEeeGxZyL051UyA" elementId="JavaWizards">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp-UreEeeGxZyL051UyA" elementId="org.eclipse.jdt.ui.actions.OpenProjectWizard" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp-kreEeeGxZyL051UyA" elementId="org.eclipse.jdt.ui.actions.OpenPackageWizard">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp-0reEeeGxZyL051UyA" elementId="org.eclipse.jdt.ui.actions.NewTypeDropDown">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_wuSp_EreEeeGxZyL051UyA" elementId="org.eclipse.search.searchActionSet">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp_UreEeeGxZyL051UyA" elementId="Search">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp_kreEeeGxZyL051UyA" elementId="openType">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSp_0reEeeGxZyL051UyA" elementId="org.eclipse.mylyn.tasks.ui.openTask">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqAEreEeeGxZyL051UyA" elementId="org.eclipse.search.OpenSearchDialogPage">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_wuSqAUreEeeGxZyL051UyA" elementId="group.nav" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -764,64 +677,10 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_wuSqA0reEeeGxZyL051UyA" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqBEreEeeGxZyL051UyA" elementId="history.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqBUreEeeGxZyL051UyA" elementId="group.application" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqBkreEeeGxZyL051UyA" elementId="backardHistory">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqB0reEeeGxZyL051UyA" elementId="forwardHistory">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqCEreEeeGxZyL051UyA" elementId="pin.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_wuSqCUreEeeGxZyL051UyA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_wuW64EreEeeGxZyL051UyA"/>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqCkreEeeGxZyL051UyA" elementId="org.eclipse.ui.edit.text.gotoNextAnnotation">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqC0reEeeGxZyL051UyA" elementId="org.eclipse.ui.edit.text.gotoPreviousAnnotation">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqDEreEeeGxZyL051UyA" elementId="org.eclipse.ui.edit.text.gotoLastEditPosition">
-          <tags>Opaque</tags>
-        </children>
-      </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_wuSqDUreEeeGxZyL051UyA" elementId="org.eclipse.jdt.ui.CompilationUnitEditor" visible="false">
-        <tags>Draggable</tags>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Hkeu8ErlEeeEe-YQr6zlbA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_wuW64EreEeeGxZyL051UyA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_wuSqDkreEeeGxZyL051UyA" elementId="org.eclipse.datatools.sqltools.sqlscrapbook.SQLScrapbookEditor" visible="false">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqD0reEeeGxZyL051UyA" elementId="group.undo">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqEEreEeeGxZyL051UyA" elementId="group.sqleditor.open">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqEUreEeeGxZyL051UyA" elementId="group.copy">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqEkreEeeGxZyL051UyA" elementId="group.sqleditor.source">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqE0reEeeGxZyL051UyA" elementId="group.sqleditor.execute">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqFEreEeeGxZyL051UyA" elementId="group.sqleditor.wizard">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqFUreEeeGxZyL051UyA" elementId="group.sqleditor.save">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqFkreEeeGxZyL051UyA" elementId="group.sqleditor.addition">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqF0reEeeGxZyL051UyA" elementId="additions">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_wuSqGEreEeeGxZyL051UyA" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -833,12 +692,6 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_wuSqHEreEeeGxZyL051UyA" elementId="org.eclipse.ui.workbench.help" visible="false">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqHUreEeeGxZyL051UyA" elementId="group.help">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_wuSqHkreEeeGxZyL051UyA" elementId="group.application" visible="false">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolControl" xmi:id="_wuSqH0reEeeGxZyL051UyA" elementId="PerspectiveSpacer" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
         <tags>stretch</tags>
@@ -1412,7 +1265,7 @@
     </bindings>
     <bindings xmi:id="_wuTROEreEeeGxZyL051UyA" keySequence="COMMAND+SHIFT+M" command="_wuW61EreEeeGxZyL051UyA"/>
     <bindings xmi:id="_wuTROUreEeeGxZyL051UyA" keySequence="ALT+5" command="_wuWUA0reEeeGxZyL051UyA"/>
-    <bindings xmi:id="_wuTROkreEeeGxZyL051UyA" keySequence="COMMAND+CTRL+F" command="_wuW780reEeeGxZyL051UyA"/>
+    <bindings xmi:id="_F9XAIErlEeeEe-YQr6zlbA" keySequence="COMMAND+CTRL+F" command="_wuW780reEeeGxZyL051UyA"/>
   </bindingTables>
   <bindingTables xmi:id="_wuTRO0reEeeGxZyL051UyA" elementId="org.eclipse.ui.serverViewScope" bindingContext="_wuT3m0reEeeGxZyL051UyA">
     <bindings xmi:id="_wuTRPEreEeeGxZyL051UyA" keySequence="ALT+COMMAND+D" command="_wuW6okreEeeGxZyL051UyA"/>
@@ -1655,7 +1508,7 @@
     <bindings xmi:id="_wuTR0kreEeeGxZyL051UyA" keySequence="CTRL+D" command="_wuW7qUreEeeGxZyL051UyA"/>
   </bindingTables>
   <bindingTables xmi:id="_wuTR00reEeeGxZyL051UyA" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" bindingContext="_wuT3p0reEeeGxZyL051UyA">
-    <bindings xmi:id="_wuTR1EreEeeGxZyL051UyA" keySequence="M1+W" command="_wuW79UreEeeGxZyL051UyA"/>
+    <bindings xmi:id="_F9XnMErlEeeEe-YQr6zlbA" keySequence="M1+W" command="_wuW79UreEeeGxZyL051UyA"/>
   </bindingTables>
   <bindingTables xmi:id="_wuTR1UreEeeGxZyL051UyA" bindingContext="_wuT3sEreEeeGxZyL051UyA"/>
   <bindingTables xmi:id="_wuTR1kreEeeGxZyL051UyA" bindingContext="_wuT3sUreEeeGxZyL051UyA"/>
@@ -2467,6 +2320,23 @@
     <tags>View</tags>
     <tags>categoryTag:JavaScript</tags>
   </descriptors>
+  <trimContributions xmi:id="_2r10UF9tEeO-yojH_y4TJA" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
+    <children xsi:type="menu:ToolControl" xmi:id="_76uUAF9tEeO-yojH_y4TJA" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+      <tags>glue</tags>
+      <tags>move_after:PerspectiveSpacer</tags>
+      <tags>SHOW_RESTORE_MENU</tags>
+    </children>
+    <children xsi:type="menu:ToolControl" xmi:id="_8tJPcF9tEeO-yojH_y4TJA" elementId="SearchField" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.quickaccess.SearchField">
+      <tags>move_after:Spacer Glue</tags>
+      <tags>HIDEABLE</tags>
+      <tags>SHOW_RESTORE_MENU</tags>
+    </children>
+    <children xsi:type="menu:ToolControl" xmi:id="_9LgmcF9tEeO-yojH_y4TJA" elementId="Search-PS Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+      <tags>glue</tags>
+      <tags>move_after:SearchField</tags>
+      <tags>SHOW_RESTORE_MENU</tags>
+    </children>
+  </trimContributions>
   <commands xmi:id="_wuVtV0reEeeGxZyL051UyA" elementId="org.eclipse.ui.window.customizePerspective" contributorURI="platform:/plugin/org.eclipse.platform"/>
   <commands xmi:id="_wuVtWEreEeeGxZyL051UyA" elementId="org.eclipse.jdt.ui.correction.inlineLocal.assist" commandName="Quick Assist - Inline local variable" description="Invokes quick assist and selects 'Inline local variable'" category="_wuW9OkreEeeGxZyL051UyA"/>
   <commands xmi:id="_wuVtWUreEeeGxZyL051UyA" elementId="org.eclipse.ui.edit.text.select.pageUp" commandName="Select Page Up" description="Select to the top of the page" category="_wuW9IEreEeeGxZyL051UyA"/>
@@ -3803,7 +3673,7 @@
   <addons xmi:id="_wuW9EUreEeeGxZyL051UyA" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon"/>
   <addons xmi:id="_wuW9EkreEeeGxZyL051UyA" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_wuW9E0reEeeGxZyL051UyA" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_wuW9FEreEeeGxZyL051UyA" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_IYS0IKimEeS11vbz3f9ezw" elementId="org.eclipse.ui.ide.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_wuW9FUreEeeGxZyL051UyA" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <addons xmi:id="_wuW9FkreEeeGxZyL051UyA" elementId="org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler"/>
   <categories xmi:id="_wuW9F0reEeeGxZyL051UyA" elementId="org.eclipse.team.ui.category.team" name="Team" description="Actions that apply when working with a Team"/>
