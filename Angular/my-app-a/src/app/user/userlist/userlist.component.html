@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="panel panel-default panel-primary">
+    <div class="panel-heading"> User Profiles </div>
+    <div class="panel-body">
+      <h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th> User ID </th>
+              <th> First Name </th>
+              <th> Last name </th>
+              <th> Role </th>
+              <th> Actions </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of service.getUsers()">
+              <td> {{user.userId}} </td>
+              <td> {{user.firstName}} </td>
+              <td> {{user.lastName}} </td>
+              <td> {{user.role}} </td>
+              <td> 
+                <a routerLink='/update-user/{{user.userId}}'>
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+                <a routerLink='/delete-user/{{user.userId}}'>
+                  <span class="glyphicon glyphicon-trash"></span>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </h2>
+      <button type="button" class="btn btn-primary" routerLink="/add-user"> Add User </button>
+    </div>
+  </div>
+</div>

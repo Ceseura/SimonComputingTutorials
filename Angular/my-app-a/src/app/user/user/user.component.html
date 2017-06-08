@@ -1,0 +1,96 @@
+<div class="col-md-offset-3 col-md-6">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading"> {{ title }} </div>
+    <div class="panel-body">
+
+      <form [formGroup]="userForm" novalidate>
+
+        <div class="form-group">
+          <label class="center-block"> User ID: * 
+            <input class="form-control" formControlName="userId">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block"> First Name:
+            <input class="form-control" formControlName="firstName">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block"> Last Name: *
+            <input class="form-control" formControlName="lastName">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block"> Role: 
+            <select class="form-control" formControlName="role">
+              <option *ngFor="let role of roles" [value]="role"> {{ role }} </option>
+            </select>
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block"> Title: 
+            <select class="form-control" formControlName="role">
+              <option *ngFor="let title of titles" [value]="title"> {{ title }} </option>
+            </select>
+          </label>
+        </div>
+
+
+      <!-- This shows how to query information from the FormGroup -->
+<!--         <p> Form value: {{ userForm.value | json }} </p>
+        <p> Form status: {{ userForm.status | json }} </p> -->
+
+        <div formGroupName="address" class="well well-lg">
+          <h4> Primary Address </h4>
+          <div class="form-group">
+            <label class="center-block"> Street:
+              <input class="form-control" formControlName="street">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> City:
+              <input class="form-control" formControlName="city">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> State: 
+              <select class="form-control" formControlName="state">
+                <option *ngFor="let state of states" [value]="state"> {{ state }} </option>
+              </select>
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Zip Code:
+              <input class="form-control" formControlName="zip">
+            </label>
+          </div>
+        </div>
+
+        <!-- <p> Street value: {{ userForm.get('address.street').value }} </p> -->
+      </form>
+    </div>
+  </div>
+  <div class="panel">
+    <form [formGroup]="deleteBar" novalidate>
+      <div class="form-group" [class.hidden]="mode != 'delete-user'">
+        <label class="center-block"> Type the user's ID here to delete
+          <input class="form-control" formControlName="deleteMe">
+        </label>
+      </div>
+    </form>
+  </div>
+
+  <button type="button" class="btn btn-primary" [class.disabled]="userForm.status === 'INVALID'" (click)="modifyUser()">
+    <span *ngIf="!userId"> Add </span>
+    <span *ngIf="mode === 'update-user'"> Update </span>
+    <span *ngIf="mode === 'delete-user'"> Delete </span>
+  </button>
+
+  <button type="button" class="btn btn-danger" routerLink="/userlist"> Cancel </button>
+  <br> <br>
+  <div [class.hidden]="!error" class="alert alert-danger" role="alert">
+    <strong> ALERT ALERT DANGER </strong> {{ error }}
+  </div>
+  <!-- <p> Users: {{ service.getUsers() | json }} </p> -->
+</div>

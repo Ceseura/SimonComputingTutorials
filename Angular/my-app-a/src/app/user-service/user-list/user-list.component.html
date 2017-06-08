@@ -1,0 +1,24 @@
+<h1> {{myValue}} is my value </h1>
+<p> The count is {{ getCount() }} </p>
+<p> myObject: {{ myObject | json }} </p>
+<p> {{ today | date }} {{ myValue }} </p>
+<p> {{ today | date:format }} </p>
+<p> {{ today | date:'yyyy-MM-dd' }} </p>
+
+<div class = "box {{ className }}">
+	Hello I am a box
+</div>
+
+<div class = "box color1" [class.hidden]="hideMe">
+	Hello I am hidden
+</div>
+
+<div class = "box color2">
+	<button (click)="onButton1Click()"> Click Me </button>
+</div>
+
+<select>
+	<option *ngFor="let color of colors"> {{ color }} </option>
+</select>
+
+
